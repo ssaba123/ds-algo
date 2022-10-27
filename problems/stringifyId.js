@@ -1,8 +1,8 @@
 
 function stringify(arr){
-    let newArr = [];
-    arr.map(i=> !newArr.includes(i.id) ? newArr.push(i.id) : null)   
-    return newArr.join(', ')
+    let ids = arr.map(i => i.id);
+    let newArr = [...new Set(ids)].join(', ')
+    return newArr
 }
 
 
