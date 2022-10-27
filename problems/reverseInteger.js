@@ -12,8 +12,14 @@ function reverseInt(int){
         reversed = num[i] + reversed
     }
 
+    // if negative, move negative sign from end to front
+    if(reversed[reversed.length -1] === '-'){
+    reversed = '-' + reversed 
+    reversed = reversed.slice(0,-1)
+    }
+
    // turn the string back to a number and return
-   return Number(reversed)
+   return reversed
 }
 
-console.log(reverseInt(4329)) // expected output: 9234
+console.log(reverseInt(-500)) // expected output: -005
